@@ -1,2 +1,2 @@
-# cylockholmes.github.io
+#joshuakrizek.com
 Content coming soon
