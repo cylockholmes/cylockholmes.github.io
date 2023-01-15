@@ -136,6 +136,10 @@
                         </li>
                         
                             <li class="bullet">
+                                <a href="https://joshuakrizek.com/posts/hugoonwindows/">Installing Hugo on Windows</a>
+                            </li>
+                        
+                            <li class="bullet">
                                 <a href="https://joshuakrizek.com/posts/1-24-2022-post/">Interesting hacking attempt</a>
                             </li>
                         
@@ -183,6 +187,32 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         <main class="content container">
             <div class="posts">
     
+    <article class="post">
+        <div class="info">
+    <h1 class="post-title">
+        <a href="https://joshuakrizek.com/posts/hugoonwindows/">Installing Hugo on Windows</a>
+    </h1>
+    <time datetime="2023-01-14T23:27:47-0700" class="post-date">
+        January 14, 2023
+    </time>
+    
+    
+    
+    
+    
+    
+</div>
+
+        I&rsquo;m going to be using Chocolatey to install Hugo. The install page for chocolatey is here: https://chocolatey.org/install.
+Run Get-ExecutionPolicy . Mine returned restricted. I then ran Set-ExecutionPolicy AllSigned. Run the following command Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) ![[20230114192912.png]] Run choco Success! Install Hugo:
+Run choco install hugo-extended Install Git:
+Run the .exe installer from https://git-scm.com/download/win Build a site! (I&rsquo;m going to be using the Poison theme: https://themes.
+        
+        <div class="read-more-link">
+            <a href="./posts/hugoonwindows/">Read More…</a>
+        </div>
+        
+    </article>
     <article class="post">
         <div class="info">
     <h1 class="post-title">

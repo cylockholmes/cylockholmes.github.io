@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Joshua Krizek</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jan 2023 19:48:21 -0700</lastBuildDate><atom:link href="https://joshuakrizek.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Jan 2023 23:27:47 -0700</lastBuildDate><atom:link href="https://joshuakrizek.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing Hugo on Windows</title>
+      <link>https://joshuakrizek.com/posts/hugoonwindows/</link>
+      <pubDate>Sat, 14 Jan 2023 23:27:47 -0700</pubDate>
+      
+      <guid>https://joshuakrizek.com/posts/hugoonwindows/</guid>
+      <description>I&amp;rsquo;m going to be using Chocolatey to install Hugo. The install page for chocolatey is here: https://chocolatey.org/install.
+Run Get-ExecutionPolicy . Mine returned restricted. I then ran Set-ExecutionPolicy AllSigned. Run the following command Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) ![[20230114192912.png]] Run choco Success! Install Hugo:
+Run choco install hugo-extended Install Git:
+Run the .exe installer from https://git-scm.com/download/win Build a site! (I&amp;rsquo;m going to be using the Poison theme: https://themes.</description>
+    </item>
+    
     <item>
       <title>Interesting hacking attempt</title>
       <link>https://joshuakrizek.com/posts/1-24-2022-post/</link>
