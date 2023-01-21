@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resources on Joshua Krizek</title>
+    <link>https://joshuakrizek.com/resources/</link>
+    <description>Recent content in Resources on Joshua Krizek</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Jan 2023 21:16:41 -0700</lastBuildDate><atom:link href="https://joshuakrizek.com/resources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resources</title>
+      <link>https://joshuakrizek.com/resources/resources/</link>
+      <pubDate>Sat, 14 Jan 2023 21:16:41 -0700</pubDate>
+      
+      <guid>https://joshuakrizek.com/resources/resources/</guid>
+      <description>Books: Ghost in the Wire
+Art of Invisibility
+Spies Among Us (The book that started my journey)
+Countdown to zero Day
+More coming at some point&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

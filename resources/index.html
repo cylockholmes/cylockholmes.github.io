@@ -21,7 +21,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Installing Hugo on Windows &middot; Joshua Krizek</title>
+    <title>Resources &middot; Joshua Krizek</title>
     <meta name="description" content="" />
 
     
@@ -35,6 +35,7 @@
 
 
     
+    <link href="https://joshuakrizek.com/resources/index.xml" rel="alternate" type="application/rss+xml" title="Joshua Krizek" />
     
     <style>
     body {
@@ -90,7 +91,7 @@
     <h1 class="brand">
         
             <a href="https://joshuakrizek.com/">
-                <img src="../../NightCafe_AI_Profile_Image.jpg" alt="brand image">
+                <img src="../NightCafe_AI_Profile_Image.jpg" alt="brand image">
             </a>
         
         
@@ -113,7 +114,7 @@
             
                 
                     <li class="heading">
-                        <a href="../../about/">About</a>
+                        <a href="../about/">About</a>
                     </li>
                     
                 
@@ -131,7 +132,7 @@
             
                 
                     <li class="heading">
-                        <a href="../../resources/">Resources</a>
+                        <a href="../resources/">Resources</a>
                     </li>
                     
                 
@@ -143,7 +144,7 @@
             
                 
                     <li class="heading">
-                        <a href="../../posts/">Posts</a>
+                        <a href="../posts/">Posts</a>
                     </li>
                     
                         <li class="sub-heading">
@@ -202,85 +203,23 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 </aside>
 
         <main class="content container">
-            <div class="post">
-  <div class="info">
-    <h1 class="post-title">
-        <a href="https://joshuakrizek.com/posts/hugoonwindows/">Installing Hugo on Windows</a>
-    </h1>
-    <time datetime="2023-01-14T23:27:47-0700" class="post-date">
-        January 14, 2023
-    </time>
+            <h1 class="title">Resources</h1>
+<ul class="entries">
     
-    
-    
-    
-    
-    
-</div>
-
-  <p>I&rsquo;m going to be using Chocolatey to install Hugo. The install page for chocolatey is here: <a href="https://chocolatey.org/install">https://chocolatey.org/install</a>.</p>
-<ol>
-<li>Run <code>Get-ExecutionPolicy</code> . Mine returned restricted. I then ran <code>Set-ExecutionPolicy AllSigned</code>.
-<img src="../../20230114192636.png" alt="Img1"></li>
-<li>Run the following command <code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</code>
-![[20230114192912.png]]</li>
-<li>Run <code>choco</code>
-<img src="../../20230114192955.png" alt="Img2"></li>
-<li>Success!</li>
-</ol>
-<p>Install Hugo:</p>
-<ol>
-<li>Run <code>choco install hugo-extended</code>
-<img src="../../20230114193159.png" alt="Img2"></li>
-</ol>
-<p>Install Git:</p>
-<ol>
-<li>Run the .exe installer from <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
-</ol>
-<p>Build a site!
-(I&rsquo;m going to be using the Poison theme: <a href="https://themes.gohugo.io/themes/poison/">https://themes.gohugo.io/themes/poison/</a>)</p>
-<ol>
-<li>Open up a PowerShell terminal</li>
-<li>Navigate to the folder location for your new blog
-<img src="../../20230114193818.png" alt="Img4"></li>
-<li><code>hugo new site joshuakrizek</code></li>
-<li><code>cd joshuakrizek</code></li>
-<li><code>git init</code></li>
-<li><code>git submodule add https://github.com/lukeorth/poison themes/poison</code></li>
-<li><code>echo &quot;theme = 'poison'&quot; &gt;&gt; config.toml</code> (This errored out on me and I opened up the config doc manually, removed the corrupted line and saved the file)
-<img src="../../20230114194646.png" alt="Img5"></li>
-<li><code>hugo server</code>
-<img src="../../20230114194621.png" alt="Img6"></li>
-<li>Open up http://localhost:1313/ in a browser
-<img src="../../20230114194549.png" alt="Img7"></li>
-<li>Success!</li>
-</ol>
-<p>(Apologies for the Espanol in the screenshots. I&rsquo;m trying to learn)</p>
-<h2 id="references">References:</h2>
-<p><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></p>
-<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></p>
-<p><a href="https://www.mytechramblings.com/posts/create-a-website-with-hugo-and-gh/">https://www.mytechramblings.com/posts/create-a-website-with-hugo-and-gh/</a></p>
-
-  <hr>
-<div class="footer">
-    
-	    
-            
+        <h3 style="text-align: center;">2023</h3>
         
-	    
+            <li>
+                <span class="title">
+                    <a href="../resources/resources/">Resources</a>
+                </span>
+                <span class="published">
+                    <time class="pull-right post-list">Jan 1, 2023</time>
+                </span>
+            </li>
+        
     
-</div>
+</ul>
 
-  <div class="article-toc " >
-    <h4></h4>
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#references">References:</a></li>
-  </ul>
-</nav>
-</div>
-
-</div>
         </main>
     </body>
 </html>
