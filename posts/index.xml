@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Joshua Krizek</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jan 2023 23:27:47 -0700</lastBuildDate><atom:link href="https://joshuakrizek.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Mar 2023 17:27:45 -0800</lastBuildDate><atom:link href="https://joshuakrizek.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New_hugo_post</title>
+      <link>https://joshuakrizek.com/posts/new_hugo_post/</link>
+      <pubDate>Wed, 08 Mar 2023 17:27:45 -0800</pubDate>
+      
+      <guid>https://joshuakrizek.com/posts/new_hugo_post/</guid>
+      <description>Run: hugo new posts/&amp;lt;uri_of_post&amp;gt;.md &amp;ldquo;/20230308172905.png&amp;rdquo;</description>
+    </item>
+    
     <item>
       <title>Installing Hugo on Windows</title>
       <link>https://joshuakrizek.com/posts/hugoonwindows/</link>
@@ -38,15 +47,6 @@ Once he signed into his laptop this is what showed up: The timemachine and disk 
       <guid>https://joshuakrizek.com/posts/my-first-post/</guid>
       <description>Introduction This is bold text, and this is emphasized text.
 Visit the Hugo website!</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://joshuakrizek.com/posts/opening-existing-hugo-github-site/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://joshuakrizek.com/posts/opening-existing-hugo-github-site/</guid>
-      <description></description>
     </item>
     
   </channel>
