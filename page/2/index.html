@@ -21,8 +21,8 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Interesting hacking attempt &middot; Joshua Krizek</title>
-    <meta name="description" content="" />
+    <title>Joshua Krizek</title>
+    <meta name="description" content="Aspiring ethical hacker" />
 
     
     <link type="text/css" rel="stylesheet" href="https://joshuakrizek.com/css/poole.css">
@@ -35,6 +35,7 @@
 
 
     
+    <link href="https://joshuakrizek.com/index.xml" rel="alternate" type="application/rss+xml" title="Joshua Krizek" />
     
     <style>
     body {
@@ -206,13 +207,15 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 </aside>
 
         <main class="content container">
-            <div class="post">
-  <div class="info">
+            <div class="posts">
+    
+    <article class="post">
+        <div class="info">
     <h1 class="post-title">
-        <a href="https://joshuakrizek.com/posts/1-24-2022-post/">Interesting hacking attempt</a>
+        <a href="https://joshuakrizek.com/posts/opening-existing-hugo-github-site/"></a>
     </h1>
-    <time datetime="2023-01-14T19:48:21-0700" class="post-date">
-        January 14, 2023
+    <time datetime="0001-01-01T00:00:00Z" class="post-date">
+        January 1, 0001
     </time>
     
     
@@ -222,46 +225,33 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     
 </div>
 
-  <p>Recently I assisted an elderly friend with his computer. He called me up saying he had a virus on his computer.</p>
-<p>Here&rsquo;s what I found:</p>
-<ol>
-<li>Once he signed into his laptop this is what showed up:
-<img src="../../IMG_20221220_152413_829.jpg" alt="Screenshot1">
-The timemachine and disk messages are real. Everything else on the screen is rendered in a single webpage which I thought was quite creative. (It&rsquo;s hilarious though that it&rsquo;s a mac site but it says access to your PC has been blocked)</li>
-<li>Swiping up with multiple fingers revealed the full screened browser window:
-<img src="../../20230114191802.png" alt="Screenshot2">
-<img src="../../20230114191902.png" alt="Screenshot3"></li>
-<li>It then threw another error (still in the same window):
-<img src="../../20230114191945.png" alt="Screenshot4"></li>
-</ol>
-<p>After closing out the site and running malwarebytes I gave a little speel about being careful about clicking on links etc. I then called it a day and went home.</p>
-<p>Shortly thereafter he called me up again and said that he had the same issue on his iMac. I made it out Christmas Eve and found the same type of site also in full screen so as to appear to be multiple programs. This one however had an actual URL (which I lost) and was also windows specfic.</p>
-<p>This time as before I tried to locate which processid spawned the safari window that the site was showing up in. This time however I tried navigating back and found <a href="https://refdesk.com/">https://refdesk.com/</a>. This is a site that both he and his wife uses as their home page. I ran the site through virus total (<a href="https://www.virustotal.com/gui/url/51d9e12513d8d980049eaba02925dede005496f914778a365ec4fee98821f388">https://www.virustotal.com/gui/url/51d9e12513d8d980049eaba02925dede005496f914778a365ec4fee98821f388</a>) and my current theory is that an advertizement on this site was malicious and linked to both of these two pages.</p>
-<p>Both times I ran malwarebytes and both times it came back with nothing. I believe since he did a great job not clicking on anything once the pages opened. Based on that I&rsquo;m comfortable leaving them as is.</p>
-<p>Unfortunatly the IP address is no longer loading a site and I misplaced the URL I&rsquo;m not able to assess further any specific payloads that the sites were setup to deliver.</p>
-<p>To solve this I installed an adblocker on both of his Macs and he hasn&rsquo;t reported any issues since.</p>
-<p>TLDR: Don&rsquo;t wait weeks to investigate malicious actors ;) Also, friends are great :)</p>
+        
+        
+    </article>
+</div>
 
-  <hr>
+
+<hr>
 <div class="footer">
+<nav id="page-nav">
+
     
-	    
-            
-	            <a class="previous-post" href="https://joshuakrizek.com/posts/my-first-post/?ref=footer">« My First Post</a>
-	        
-        
-	    
-            
-        
+    <a href="../../" rel="prev" class="extend prev">&laquo; Previous</a>
+    
+    
+    
+    <a href="../../">1</a>
+    
+    
+    
+    <span class="page-number current">2</span>
+    
+    
+
     
 </div>
 
-  <div class="article-toc " >
-    <h4></h4>
-    <nav id="TableOfContents"></nav>
-</div>
 
-</div>
         </main>
     </body>
 </html>

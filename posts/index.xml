@@ -40,5 +40,14 @@ Once he signed into his laptop this is what showed up: The timemachine and disk 
 Visit the Hugo website!</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://joshuakrizek.com/posts/opening-existing-hugo-github-site/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://joshuakrizek.com/posts/opening-existing-hugo-github-site/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
