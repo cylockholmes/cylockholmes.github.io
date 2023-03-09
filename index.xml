@@ -13,7 +13,7 @@
       <pubDate>Wed, 08 Mar 2023 17:27:45 -0800</pubDate>
       
       <guid>https://joshuakrizek.com/posts/new_hugo_post/</guid>
-      <description>Run: hugo new posts/&amp;lt;uri_of_post&amp;gt;.md &amp;ldquo;/20230308172905.png&amp;rdquo;
+      <description>Run: hugo new posts/&amp;lt;uri_of_post&amp;gt;.md ![Img1](/20230308172905.png
 Open in markdown editor (e.g. Obsidian)
 Once you&amp;rsquo;ve finished writing the post change draft from true to false
 Navigate in your terminal to the main blog directory and run hugo
