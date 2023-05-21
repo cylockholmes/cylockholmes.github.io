@@ -14,9 +14,7 @@
       
       <guid>https://joshuakrizek.com/posts/devel_htb_pt1/</guid>
       <description>https://app.hackthebox.com/machines/Devel
-Step one: ping host to make sure it&amp;rsquo;s active: ping 10.10.10.5
-Step two: run nmap against host (in this case it doesn&amp;rsquo;t matter how noisy we are): nmap -v -A -p- 10.10.10.5 ![[Pasted image 20230516175101.png]] ![[Pasted image 20230516175119.png]]
-So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server: !</description>
+Step one: ping host to make sure it&amp;rsquo;s active: ping 10.10.10.5 Step two: run nmap against host (in this case it doesn&amp;rsquo;t matter how noisy we are): nmap -v -A -p- 10.10.10.5 So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server: Based on that information let&amp;rsquo;s see if we can upload a file and access it via our browser.</description>
     </item>
     
     <item>
@@ -41,7 +39,7 @@ Run git push origin master</description>
       
       <guid>https://joshuakrizek.com/posts/hugoonwindows/</guid>
       <description>I&amp;rsquo;m going to be using Chocolatey to install Hugo. The install page for chocolatey is here: https://chocolatey.org/install.
-Run Get-ExecutionPolicy . Mine returned restricted. I then ran Set-ExecutionPolicy AllSigned. Run the following command Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) ![[20230114192912.png]] Run choco Success! Install Hugo:
+Run Get-ExecutionPolicy . Mine returned restricted. I then ran Set-ExecutionPolicy AllSigned. Run the following command Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) Run choco Success! Install Hugo:
 Run choco install hugo-extended Install Git:
 Run the .exe installer from https://git-scm.com/download/win Build a site! (I&amp;rsquo;m going to be using the Poison theme: https://themes.</description>
     </item>
