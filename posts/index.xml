@@ -20,17 +20,6 @@ So we know there are two services we can start with, anonymous ftp and a windows
     </item>
     
     <item>
-      <title>Automate_Hugo_with_Github_Actions</title>
-      <link>https://joshuakrizek.com/posts/automate-hugo-with-github-actions/</link>
-      <pubDate>Thu, 09 Mar 2023 02:44:46 -0800</pubDate>
-      
-      <guid>https://joshuakrizek.com/posts/automate-hugo-with-github-actions/</guid>
-      <description>cd joshuakrizek echo &amp;quot;public/&amp;quot; &amp;gt;&amp;gt; .gitignore
-References:
-https://www.mytechramblings.com/posts/create-a-website-with-hugo-and-gh/</description>
-    </item>
-    
-    <item>
       <title>New hugo post</title>
       <link>https://joshuakrizek.com/posts/new_hugo_post/</link>
       <pubDate>Wed, 08 Mar 2023 17:27:45 -0800</pubDate>
@@ -76,24 +65,6 @@ Once he signed into his laptop this is what showed up: The timemachine and disk 
       <guid>https://joshuakrizek.com/posts/my-first-post/</guid>
       <description>Introduction This is bold text, and this is emphasized text.
 Visit the Hugo website!</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://joshuakrizek.com/posts/pasted-image-20230516174407.png/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://joshuakrizek.com/posts/pasted-image-20230516174407.png/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://joshuakrizek.com/posts/pasted-image-20230521191930.png/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://joshuakrizek.com/posts/pasted-image-20230521191930.png/</guid>
-      <description></description>
     </item>
     
   </channel>
