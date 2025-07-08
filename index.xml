@@ -6,15 +6,40 @@
     <description>Recent content on Joshua Krizek</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 May 2023 19:20:33 -0400</lastBuildDate><atom:link href="https://joshuakrizek.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Jul 2025 22:37:32 -0700</lastBuildDate><atom:link href="https://joshuakrizek.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blue</title>
+      <link>https://joshuakrizek.com/posts/blue/</link>
+      <pubDate>Mon, 07 Jul 2025 22:37:32 -0700</pubDate>
+      
+      <guid>https://joshuakrizek.com/posts/blue/</guid>
+      <description>Blue Walkthrough assessment and exploitation of the PEH machine Blue.
+The first step is to scan the machine and determine what services are running as well as what type of operating system we’re looking at. To do that we’re going to use nmap with the following command:
+nmap -p- -T4 -A {ip address} -p- instructs nmap to scan all ports
+-T4 instructs nmap to use 4 threads thus speeding up the process in the lap environment.</description>
+    </item>
+    
     <item>
       <title>Devel_HTB_PT1</title>
-      <link>https://joshuakrizek.com/posts/devel-htb-pt1/</link>
+      <link>https://joshuakrizek.com/posts/devel_htb_pt1/</link>
       <pubDate>Sun, 21 May 2023 19:20:33 -0400</pubDate>
       
-      <guid>https://joshuakrizek.com/posts/devel-htb-pt1/</guid>
+      <guid>https://joshuakrizek.com/posts/devel_htb_pt1/</guid>
       <description>https://app.hackthebox.com/machines/Devel
-Step one: ping host to make sure it&amp;rsquo;s active: ping 10.10.10.5 Step two: run nmap against host (in this case it doesn&amp;rsquo;t matter how noisy we are): nmap -v -A -p- 10.10.10.5 So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server: Based on that information let&amp;rsquo;s see if we can upload a file and access it via our browser.</description>
+Step one: ping host to make sure it&amp;rsquo;s active: ping 10.10.10.5
+Step two: run nmap against host (in this case it doesn&amp;rsquo;t matter how noisy we are): nmap -v -A -p- 10.10.10.5 ![[Pasted image 20230516175101.png]] ![[Pasted image 20230516175119.png]]
+So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server: !</description>
+    </item>
+    
+    <item>
+      <title>Automate_Hugo_with_Github_Actions</title>
+      <link>https://joshuakrizek.com/posts/automate-hugo-with-github-actions/</link>
+      <pubDate>Thu, 09 Mar 2023 02:44:46 -0800</pubDate>
+      
+      <guid>https://joshuakrizek.com/posts/automate-hugo-with-github-actions/</guid>
+      <description>cd joshuakrizek echo &amp;quot;public/&amp;quot; &amp;gt;&amp;gt; .gitignore
+References:
+https://www.mytechramblings.com/posts/create-a-website-with-hugo-and-gh/</description>
     </item>
     
     <item>
@@ -39,7 +64,7 @@ Run git push origin master</description>
       
       <guid>https://joshuakrizek.com/posts/hugoonwindows/</guid>
       <description>I&amp;rsquo;m going to be using Chocolatey to install Hugo. The install page for chocolatey is here: https://chocolatey.org/install.
-Run Get-ExecutionPolicy . Mine returned restricted. I then ran Set-ExecutionPolicy AllSigned. Run the following command Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) Run choco Success! Install Hugo:
+Run Get-ExecutionPolicy . Mine returned restricted. I then ran Set-ExecutionPolicy AllSigned. Run the following command Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;)) ![[20230114192912.png]] Run choco Success! Install Hugo:
 Run choco install hugo-extended Install Git:
 Run the .exe installer from https://git-scm.com/download/win Build a site! (I&amp;rsquo;m going to be using the Poison theme: https://themes.</description>
     </item>
@@ -87,6 +112,24 @@ Once he signed into his laptop this is what showed up: The timemachine and disk 
       <guid>https://joshuakrizek.com/posts/my-first-post/</guid>
       <description>Introduction This is bold text, and this is emphasized text.
 Visit the Hugo website!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://joshuakrizek.com/posts/pasted-image-20230516174407.png/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://joshuakrizek.com/posts/pasted-image-20230516174407.png/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://joshuakrizek.com/posts/pasted-image-20230521191930.png/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://joshuakrizek.com/posts/pasted-image-20230521191930.png/</guid>
+      <description></description>
     </item>
     
   </channel>

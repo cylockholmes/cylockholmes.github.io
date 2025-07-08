@@ -21,8 +21,8 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Joshua Krizek</title>
-    <meta name="description" content="Aspiring ethical hacker" />
+    <title>Blue &middot; Joshua Krizek</title>
+    <meta name="description" content="" />
 
     
     <link type="text/css" rel="stylesheet" href="https://joshuakrizek.com/css/poole.css">
@@ -35,7 +35,6 @@
 
 
     
-    <link href="https://joshuakrizek.com/index.xml" rel="alternate" type="application/rss+xml" title="Joshua Krizek" />
     
     <style>
     body {
@@ -91,7 +90,7 @@
     <h1 class="brand">
         
             <a href="https://joshuakrizek.com/">
-                <img src="./NightCafe_AI_Profile_Image.jpg" alt="brand image">
+                <img src="../../NightCafe_AI_Profile_Image.jpg" alt="brand image">
             </a>
         
         
@@ -114,7 +113,7 @@
             
                 
                     <li class="heading">
-                        <a href="./about/">About</a>
+                        <a href="../../about/">About</a>
                     </li>
                     
                 
@@ -132,7 +131,7 @@
             
                 
                     <li class="heading">
-                        <a href="./resources/">Resources</a>
+                        <a href="../../resources/">Resources</a>
                     </li>
                     
                 
@@ -144,7 +143,7 @@
             
                 
                     <li class="heading">
-                        <a href="./posts/">Posts</a>
+                        <a href="../../posts/">Posts</a>
                     </li>
                     
                         <li class="sub-heading">
@@ -211,10 +210,8 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 </aside>
 
         <main class="content container">
-            <div class="posts">
-    
-    <article class="post">
-        <div class="info">
+            <div class="post">
+  <div class="info">
     <h1 class="post-title">
         <a href="https://joshuakrizek.com/posts/blue/">Blue</a>
     </h1>
@@ -229,142 +226,43 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     
 </div>
 
-        Blue Walkthrough assessment and exploitation of the PEH machine Blue.
-The first step is to scan the machine and determine what services are running as well as what type of operating system we’re looking at. To do that we’re going to use nmap with the following command:
-nmap -p- -T4 -A {ip address} -p- instructs nmap to scan all ports
--T4 instructs nmap to use 4 threads thus speeding up the process in the lap environment.
-        
-        <div class="read-more-link">
-            <a href="./posts/blue/">Read More…</a>
-        </div>
-        
-    </article>
-    <article class="post">
-        <div class="info">
-    <h1 class="post-title">
-        <a href="https://joshuakrizek.com/posts/devel_htb_pt1/">Devel_HTB_PT1</a>
-    </h1>
-    <time datetime="2023-05-21T19:20:33-0400" class="post-date">
-        May 21, 2023
-    </time>
-    
-    
-    
-    
-    
-    
-</div>
+  <h1 id="blue">Blue</h1>
+<p>Walkthrough assessment and exploitation of the PEH machine Blue.</p>
+<p>The first step is to scan the machine and determine what services are running as well as what type of operating system we’re looking at.
+To do that we’re going to use nmap with the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">nmap</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span><span style="color:#f92672">-</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">T4</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">A</span> {<span style="color:#a6e22e">ip</span> <span style="color:#a6e22e">address</span>}
+</span></span></code></pre></div><p>-p- instructs nmap to scan all ports</p>
+<p>-T4 instructs nmap to use 4 threads thus speeding up the process in the lap environment.</p>
+<p>-A instructs nmap to use the aggressive setting</p>
+<p><img src="../../image.png" alt="image.png"></p>
+<p>Looks like there are 8 open ports.
+nmap also identifies this machine as Windows 7 as well as the smb version being smb2</p>
+<p><img src="../../image%201.png" alt="image.png"></p>
+<p>Googling the windows version seems to indicate that this machine may be vulnerable to the ExternalBlue exploit</p>
+<p><img src="../../image%202.png" alt="image.png"></p>
+<p>Let’s go ahead and try metasploit as indicated by this article</p>
+<p><img src="../../image%203.png" alt="image.png"></p>
+<p>And we’re in!</p>
+<p><img src="../../image%204.png" alt="image.png"></p>
 
-        https://app.hackthebox.com/machines/Devel
-Step one: ping host to make sure it&rsquo;s active: ping 10.10.10.5
-Step two: run nmap against host (in this case it doesn&rsquo;t matter how noisy we are): nmap -v -A -p- 10.10.10.5 ![[Pasted image 20230516175101.png]] ![[Pasted image 20230516175119.png]]
-So we know there are two services we can start with, anonymous ftp and a windows server on port 80 with option TRACE. It looks like the ftp share is actually in the root of the IIS web server: !
-        
-        <div class="read-more-link">
-            <a href="./posts/devel_htb_pt1/">Read More…</a>
-        </div>
-        
-    </article>
-    <article class="post">
-        <div class="info">
-    <h1 class="post-title">
-        <a href="https://joshuakrizek.com/posts/automate-hugo-with-github-actions/">Automate_Hugo_with_Github_Actions</a>
-    </h1>
-    <time datetime="2023-03-09T02:44:46-0800" class="post-date">
-        March 9, 2023
-    </time>
-    
-    
-    
-    
-    
-    
-</div>
-
-        cd joshuakrizek echo &quot;public/&quot; &gt;&gt; .gitignore
-References:
-https://www.mytechramblings.com/posts/create-a-website-with-hugo-and-gh/
-        
-    </article>
-    <article class="post">
-        <div class="info">
-    <h1 class="post-title">
-        <a href="https://joshuakrizek.com/posts/new_hugo_post/">New hugo post</a>
-    </h1>
-    <time datetime="2023-03-08T17:27:45-0800" class="post-date">
-        March 8, 2023
-    </time>
-    
-    
-    
-    
-    
-    
-</div>
-
-        Run: hugo new posts/&lt;uri_of_post&gt;.md Open in markdown editor (e.g. Obsidian)
-Once you&rsquo;ve finished writing the post change draft from true to false
-Navigate in your terminal to the main blog directory and run hugo
-Navigate to the public directory
-Run git add .
-Run Git commit -m &quot;&lt;name of blog post&gt;&quot;
-Run git push origin master
-        
-    </article>
-    <article class="post">
-        <div class="info">
-    <h1 class="post-title">
-        <a href="https://joshuakrizek.com/posts/hugoonwindows/">Installing Hugo on Windows</a>
-    </h1>
-    <time datetime="2023-01-14T23:27:47-0700" class="post-date">
-        January 14, 2023
-    </time>
-    
-    
-    
-    
-    
-    
-</div>
-
-        I&rsquo;m going to be using Chocolatey to install Hugo. The install page for chocolatey is here: https://chocolatey.org/install.
-Run Get-ExecutionPolicy . Mine returned restricted. I then ran Set-ExecutionPolicy AllSigned. Run the following command Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) ![[20230114192912.png]] Run choco Success! Install Hugo:
-Run choco install hugo-extended Install Git:
-Run the .exe installer from https://git-scm.com/download/win Build a site! (I&rsquo;m going to be using the Poison theme: https://themes.
-        
-        <div class="read-more-link">
-            <a href="./posts/hugoonwindows/">Read More…</a>
-        </div>
-        
-    </article>
-</div>
-
-
-<hr>
+  <hr>
 <div class="footer">
-<nav id="page-nav">
-
     
-    
-    
-    <span class="page-number current">1</span>
-    
-    
-    
-    <a href="./page/2/">2</a>
-    
-    
-    
-    <a href="./page/3/">3</a>
-    
-    
-
-    
-    <a href="./page/2/" rel="next" class="extend next"> Next &raquo;</a>
+	    
+            
+	            <a class="previous-post" href="https://joshuakrizek.com/posts/devel_htb_pt1/?ref=footer">« Devel_HTB_PT1</a>
+	        
+        
+	    
     
 </div>
 
+  <div class="article-toc " >
+    <h4></h4>
+    <nav id="TableOfContents"></nav>
+</div>
 
+</div>
         </main>
     </body>
 </html>
