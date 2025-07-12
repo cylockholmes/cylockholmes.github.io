@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Joshua Krizek</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Jul 2025 22:56:20 -0700</lastBuildDate><atom:link href="https://joshuakrizek.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jul 2025 10:48:46 -0600</lastBuildDate><atom:link href="https://joshuakrizek.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Peh</title>
+      <link>https://joshuakrizek.com/posts/peh/</link>
+      <pubDate>Sat, 12 Jul 2025 10:48:46 -0600</pubDate>
+      
+      <guid>https://joshuakrizek.com/posts/peh/</guid>
+      <description>Practical Ethical Hacking: Pentesting Framework Welcome to this TCM PEH pentesting framework! Let’s dive in!
+High-Level Pentesting Workflow Preparation: Understand the scope, goals, and rules of engagement. Information Gathering (Reconnaissance): Research your target to gather as much information as possible. Scanning &amp;amp; Enumeration: Actively probe the target to identify vulnerabilities and services. Exploitation: Use your findings to exploit vulnerabilities and gain access. Post-Exploitation: Maintain access, gather data, and document your findings.</description>
+    </item>
+    
     <item>
       <title>How to setup foxyproxy for burpsuite</title>
       <link>https://joshuakrizek.com/posts/fox/</link>

