@@ -152,6 +152,10 @@
                         </li>
                         
                             <li class="bullet">
+                                <a href="https://joshuakrizek.com/posts/academy/">Academy</a>
+                            </li>
+                        
+                            <li class="bullet">
                                 <a href="https://joshuakrizek.com/posts/peh/">Peh</a>
                             </li>
                         
@@ -165,10 +169,6 @@
                         
                             <li class="bullet">
                                 <a href="https://joshuakrizek.com/posts/devel_htb_pt1/">Devel_HTB_PT1</a>
-                            </li>
-                        
-                            <li class="bullet">
-                                <a href="https://joshuakrizek.com/posts/automate-hugo-with-github-actions/">Automate_Hugo_with_Github_Actions</a>
                             </li>
                         
                     
@@ -213,6 +213,33 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         <main class="content container">
             <div class="posts">
     
+    <article class="post">
+        <div class="info">
+    <h1 class="post-title">
+        <a href="https://joshuakrizek.com/posts/academy/">Academy</a>
+    </h1>
+    <time datetime="2025-07-15T11:08:39-0600" class="post-date">
+        July 15, 2025
+    </time>
+    
+    
+    
+    
+    
+    
+</div>
+
+        Academy The first step is to scan the host with nmap:
+nmap -p- -T4 -A {ip.address} Looks like we have three ports open: 21, 22, and 80. I’m assuming we’re going to need to target either 21 or 80.
+For port 21 looks like it’s running vsftpd 3.0.3. We also see a note.txt 😀, which is a lead.
+For port 80 it looks like we’re running Apache 2.4.38.
+Let’s go ahead and open up the website on port 80 using burp.
+        
+        <div class="read-more-link">
+            <a href="./posts/academy/">Read More…</a>
+        </div>
+        
+    </article>
     <article class="post">
         <div class="info">
     <h1 class="post-title">
@@ -307,27 +334,6 @@ So we know there are two services we can start with, anonymous ftp and a windows
         <div class="read-more-link">
             <a href="./posts/devel_htb_pt1/">Read More…</a>
         </div>
-        
-    </article>
-    <article class="post">
-        <div class="info">
-    <h1 class="post-title">
-        <a href="https://joshuakrizek.com/posts/automate-hugo-with-github-actions/">Automate_Hugo_with_Github_Actions</a>
-    </h1>
-    <time datetime="2023-03-09T02:44:46-0800" class="post-date">
-        March 9, 2023
-    </time>
-    
-    
-    
-    
-    
-    
-</div>
-
-        cd joshuakrizek echo &quot;public/&quot; &gt;&gt; .gitignore
-References:
-https://www.mytechramblings.com/posts/create-a-website-with-hugo-and-gh/
         
     </article>
 </div>

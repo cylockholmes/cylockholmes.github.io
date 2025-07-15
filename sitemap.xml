@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://joshuakrizek.com/</loc>
-    <lastmod>2025-07-12T10:48:46-06:00</lastmod>
+    <loc>https://joshuakrizek.com/posts/academy/</loc>
+    <lastmod>2025-07-15T11:08:39-06:00</lastmod>
   </url><url>
-    <loc>https://joshuakrizek.com/posts/peh/</loc>
-    <lastmod>2025-07-12T10:48:46-06:00</lastmod>
+    <loc>https://joshuakrizek.com/</loc>
+    <lastmod>2025-07-15T11:08:39-06:00</lastmod>
   </url><url>
     <loc>https://joshuakrizek.com/posts/</loc>
+    <lastmod>2025-07-15T11:08:39-06:00</lastmod>
+  </url><url>
+    <loc>https://joshuakrizek.com/posts/peh/</loc>
     <lastmod>2025-07-12T10:48:46-06:00</lastmod>
   </url><url>
     <loc>https://joshuakrizek.com/posts/fox/</loc>
@@ -46,6 +49,8 @@
   </url><url>
     <loc>https://joshuakrizek.com/posts/my-first-post/</loc>
     <lastmod>2023-01-14T19:48:21-07:00</lastmod>
+  </url><url>
+    <loc>https://joshuakrizek.com/posts/academy-229f41c08ff8800db839ea819fdca4f6/</loc>
   </url><url>
     <loc>https://joshuakrizek.com/posts/pasted-image-20230516174407.png/</loc>
   </url><url>
